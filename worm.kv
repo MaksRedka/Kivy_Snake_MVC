@@ -1,0 +1,42 @@
+<Food>:
+    size: 20, 20
+    canvas:
+        Color:
+            rgba: (1, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<SnakeGame>:
+    food: Food1
+    
+    canvas:
+        Color:
+            rgba: (.5, .5, .5, 1.0)
+
+        Line:
+            width: 1.5
+            points: (0, 0), self.size
+
+        Line:
+            width: 1.5
+            points: (self.size[0], 0), (0, self.size[1])
+
+    Label:
+        font_size: 20  
+        center_x: (root.width / 2) - 20
+        top: root.top + 30 
+        text: "Score " + root.score
+        color: root.score_color
+
+    Label:
+        id: up_score
+        font_size: 50  
+        center_x: (root.width / 2) + 5
+        top: root.top - 50 
+        text: "Your Score " + root.score
+        color: root.up_score_color
+
+    Food:
+        id: Food1
